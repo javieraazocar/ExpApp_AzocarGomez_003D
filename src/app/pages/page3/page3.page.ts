@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page3Page implements OnInit {
 
+  usuario = {
+    email:'',
+    password:''
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
+  onSubmit(){
+    console.log('submit');
+    console.log(this.usuario);
+  }
+  
 
 }

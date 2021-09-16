@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 interface Componente{
   icon: string;
@@ -12,6 +13,7 @@ interface Componente{
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
+  
   componentes : Componente[] = [
     {
       icon: 'document-text-outline',
@@ -26,9 +28,12 @@ export class InicioPage implements OnInit {
   
    ]
 
-  constructor() { }
+  constructor(private menuController: MenuController) { }
 
   ngOnInit() {
   }
-
+  mostrarMenu(){
+    this.menuController.open('first')
+  }
+  
 }

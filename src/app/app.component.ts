@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 
-
+interface Componente{
+  icon: string;
+  name: string;
+  redirectTo: string;
+}
 
 
 @Component({
@@ -11,5 +15,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   constructor() {}
 
+  componentes : Componente[] =[
+    {
+      icon: 'document-text-outline',
+      name: 'Información',
+      redirectTo: '/info'
+    },
+    {
+      icon: 'clipboard-outline',
+      name: 'Formulario',
+      redirectTo:'/page3'
+    }
+  ]
  
 }
