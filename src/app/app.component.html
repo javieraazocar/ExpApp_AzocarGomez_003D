@@ -2,7 +2,7 @@
 
   <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar color="tertiary">
         <ion-title>Menú</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -12,7 +12,7 @@
         <ion-menu-toggle *ngFor="let c of componentes">
           <ion-item [routerLink]="c.redirecTo"
                   detail=true>
-          <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
+          <ion-icon [name]="c.icon" slot="start" color="tertiary"></ion-icon>
           {{ c.name }}
         </ion-item>
       </ion-menu-toggle>
