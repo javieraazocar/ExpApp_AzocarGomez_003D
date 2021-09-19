@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 interface Componente{
   icon: string;
   name: string;
-  redirectTo: string;
+  redirecTo: string;
 }
 
 
@@ -19,12 +19,12 @@ export class AppComponent {
     {
       icon: 'document-text-outline',
       name: 'Información',
-      redirectTo: '/info'
+      redirecTo: '/info'
     },
     {
       icon: 'clipboard-outline',
       name: 'Formulario',
-      redirectTo:'/page3'
+      redirecTo:'/page3'
     },
   ];
  
