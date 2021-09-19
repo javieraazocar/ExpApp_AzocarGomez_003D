@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" color="tertiary"></ion-back-button>
     </ion-buttons>
-    <ion-title>Formulario</ion-title>
+    <ion-title class="titulo">Formulario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h3>Bienvenido!</h3>
+  <h2 class="bienve">Bienvenido!</h2>
   <ion-item>
     <ion-label position="floating">Nombre:</ion-label>
     <ion-input type="text" placeholder="Ingresa tu Nombre"></ion-input>
@@ -25,7 +25,7 @@
 
   <ion-item>
     <ion-label position="floating">Fecha nacimiento</ion-label>
-    <ion-datetime displayFormat="MMMM DD, YYYY" min="1900" max="2005" placeholder="Seleccione fecha"></ion-datetime>
+    <ion-datetime displayFormat="MMMM DD, YYYY" min="1900" max="2005"  placeholder="Seleccione fecha"></ion-datetime>
   </ion-item>
   
   <form #formulario="ngForm" (ngSubmit)="onSubmit()">
@@ -44,7 +44,7 @@
           <ion-input type="password" placeholder="Contraseña" name="password"
                       [(ngModel)]="usuario.password" required></ion-input>
         </ion-item>
-        <ion-button [disable]="formulario.invalid" type="submit" expand="block" routerLink="/inicio" > 
+        <ion-button [disable]="formulario.invalid" type="submit" expand="block" routerLink="/inicio" color="tertiary"> 
           Registrarse
         </ion-button>
   </form>

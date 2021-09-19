@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController } from '@ionic/angular';
 
 interface Componente{
   icon: string;
@@ -33,7 +33,8 @@ export class InicioPage implements OnInit {
   ngOnInit() {
   }
   mostrarMenu(){
-    this.menuController.open('first')
-  }
+    this.menuController.open('first');
+  }
+  
   
 }

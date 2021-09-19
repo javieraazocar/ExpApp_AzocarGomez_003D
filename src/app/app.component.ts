@@ -15,7 +15,7 @@ interface Componente{
 export class AppComponent {
   constructor() {}
 
-  componentes : Componente[] =[
+  componentes : Componente[] = [
     {
       icon: 'document-text-outline',
       name: 'Información',
@@ -25,7 +25,7 @@ export class AppComponent {
       icon: 'clipboard-outline',
       name: 'Formulario',
       redirectTo:'/page3'
-    }
-  ]
+    },
+  ];
  
 }

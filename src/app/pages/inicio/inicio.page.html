@@ -2,13 +2,13 @@
   <ion-toolbar>
     
     <ion-buttons slot="start">
-      <ion-button (click)="mostrarMenu()">
-        <ion-icon slot="icon-only" name="menu" color="tertiary"></ion-icon>
+      <ion-button (click)="mostrarMenu()" color="tertiary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
         
       </ion-button>
     </ion-buttons>
 
-    <ion-title>Inicio</ion-title>
+    <ion-title>urHealth</ion-title>
 
   </ion-toolbar>
 </ion-header>
@@ -23,5 +23,16 @@
       </ion-item>
     </ion-list>
     
+
+    <ion-card  color="tertiary">
+      <ion-card-header>
+        <ion-card-title class="titulocard">urHealth</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content class="info">
+        Tenemos como objetivo ayudarte con tu salud, permitiendote llevar un seguimiento de tus rutinas,
+        tu dieta,entre otras cosas.
+      </ion-card-content>
+    </ion-card>
       
 </ion-content>
