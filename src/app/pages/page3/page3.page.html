@@ -49,4 +49,15 @@
         </ion-button>
   </form>
 
+  <ion-tab-bar slot="bottom">
+        
+    <ion-tab-button *ngFor="let c of componentes"
+                    [routerLink]="c.redirecTo"
+                    detail=true>
+      <ion-icon [name] = "c.icon"></ion-icon>
+      <ion-label>{{ c.name }}</ion-label>
+    </ion-tab-button>
+    
+  </ion-tab-bar>
+
 </ion-content>

@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Componente{
+  icon: string;
+  name: string;
+  redirecTo: string;
+}
+
 @Component({
   selector: 'app-page3',
   templateUrl: './page3.page.html',
@@ -7,6 +13,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page3Page implements OnInit {
 
+  componentes : Componente[] = [
+    {
+      icon: 'document-text-outline',
+      name: 'Información',
+      redirecTo: '/info'
+    },
+    {
+      icon: 'clipboard-outline',
+      name: 'Formulario',
+      redirecTo: '/page3'
+    },
+    
+  ]
   usuario = {
     email:'',
     password:''
