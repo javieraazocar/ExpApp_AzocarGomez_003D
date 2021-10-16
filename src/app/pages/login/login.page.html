@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="tertiary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+        
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>urHealth</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-img class="img" src="../../../assets/imgs/healthy.png"></ion-img>
+    
+    <ion-card color="tertiary">
+      <ion-card-header>
+        <ion-card-title>¡Bienvenido/a!</ion-card-title>
+        <ion-card-subtitle>Comienza a llevar un seguimiento de tu dieta, horas de sueño y más.</ion-card-subtitle>
+        <br>
+        <ion-button color="dark" fill="outline" expand="block" href="page3">
+          ¡Regístrate!
+        </ion-button>
+        <ion-button color="dark" expand="block" href="iniciosesion">
+          ¿Ya tienes una cuenta? Inicia sesión
+        </ion-button>
+      </ion-card-header>
+    </ion-card>
+    
+</ion-content>
