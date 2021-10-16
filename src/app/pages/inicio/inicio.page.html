@@ -8,13 +8,13 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-title>urHealth</ion-title>
+    <ion-title>Inicio</ion-title>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <!-- <ion-list>
+  <ion-list>
       <ion-item *ngFor="let c of componentes"
                 [routerLink]="c.redirecTo"
                 detail=true>
@@ -32,33 +32,5 @@
         Tenemos como objetivo ayudarte con tu salud, permitiendote llevar un seguimiento de tus rutinas,
         tu dieta,entre otras cosas.
       </ion-card-content>
-    </ion-card> -->
-    <ion-img class="img" src="../../../assets/imgs/healthy.png"></ion-img>
-    
-    <ion-card color="tertiary">
-      <ion-card-header>
-        <ion-card-title>¡Bienvenido/a!</ion-card-title>
-        <ion-card-subtitle>Comienza a llevar un seguimiento de tu dieta, horas de sueño y más.</ion-card-subtitle>
-        <br>
-        <ion-button color="dark" fill="outline" expand="block">
-          Registro
-        </ion-button>
-        <ion-button color="dark" expand="block">
-          Inicia sesión
-        </ion-button>
-      </ion-card-header>
     </ion-card>
-    
-    <ion-tabs>
-      <ion-tab-bar slot="bottom">
-        
-        <ion-tab-button *ngFor="let c of componentes"
-                        [routerLink]="c.redirecTo"
-                        detail=true>
-          <ion-icon [name] = "c.icon"></ion-icon>
-          <ion-label>{{ c.name }}</ion-label>
-        </ion-tab-button>
-
-      </ion-tab-bar>
-    </ion-tabs>
 </ion-content>
