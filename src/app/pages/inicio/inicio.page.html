@@ -22,15 +22,66 @@
         {{c.name}}
       </ion-item>
     </ion-list>
-    
-    <ion-card  color="tertiary">
-      <ion-card-header>
-        <ion-card-title class="titulocard">urHealth</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content class="info">
-        Tenemos como objetivo ayudarte con tu salud, permitiendote llevar un seguimiento de tus rutinas,
-        tu dieta,entre otras cosas.
-      </ion-card-content>
-    </ion-card>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col>
+          <ion-card color="primary">
+            <ion-card-header >
+              <ion-icon name="water" color="dark" size="large"></ion-icon>
+              <ion-card-title class="titulocard">Agua diaria</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="info">
+              Hoy has tomado 0/8 vasos de agua.
+            </ion-card-content>
+            <ion-progress-bar value="0.3" buffer="0" color="dark"></ion-progress-bar>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card color="warning">
+            <ion-card-header >
+              <ion-icon name="fitness" color="light" size="large"></ion-icon>
+              <ion-card-title class="titulocard">Ejercicio diario</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="info">
+              Hoy has hecho 0/30 minutos de ejercicio.
+            </ion-card-content>
+            <ion-progress-bar value="0.0" buffer="0" color="light"></ion-progress-bar>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card color="dark">
+            <ion-card-header >
+              <ion-icon name="fitness" color="light" size="large"></ion-icon>
+              <ion-card-title class="titulocard">Seguimiento de tu dieta</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="info">
+              <ion-item color="dark">
+                <ion-checkbox> </ion-checkbox>
+                <ion-label> 5 porciones de fruta</ion-label>
+              </ion-item>
+              <ion-item color="dark">
+                <ion-checkbox> </ion-checkbox>
+                <ion-label> 400 gramos de verduras</ion-label>
+              </ion-item>
+            </ion-card-content>
+            <ion-progress-bar value="0.0" buffer="0" color="light"></ion-progress-bar>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-tab-bar slot="bottom">
+        
+      <ion-tab-button *ngFor="let c of componentes"
+                      [routerLink]="c.redirecTo"
+                      detail=true>
+        <ion-icon [name] = "c.icon"></ion-icon>
+        <ion-label>{{ c.name }}</ion-label>
+      </ion-tab-button>
+      
+    </ion-tab-bar>
+
 </ion-content>
