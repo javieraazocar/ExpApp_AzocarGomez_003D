@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService, User } from 'src/app/services/storage.service';
+import {Platform} from '@ionic/angular';
 
 interface Componente{
   icon: string;
@@ -12,6 +14,10 @@ interface Componente{
   styleUrls: ['./page3.page.scss'],
 })
 export class Page3Page implements OnInit {
+
+  usuarios: User[] = [];
+
+  newUser: User = <User>{};
 
   componentes : Componente[] = [
     {
@@ -38,7 +44,9 @@ export class Page3Page implements OnInit {
   onSubmit(){
     console.log('submit');
     console.log(this.usuario);
+    // this.StorageService.crearUsuario(this.newUser).then(user => {
+    //   this.newUser = <User>{};
+    // });
   }
   
-
 }
