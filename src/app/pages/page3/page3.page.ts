@@ -15,7 +15,6 @@ interface Componente{
 })
 export class Page3Page implements OnInit {
 
-  usuarios: User[] = [];
 
   newUser: User = <User>{};
 
@@ -33,20 +32,25 @@ export class Page3Page implements OnInit {
     
   ]
   usuario = {
+    nombre: '',
+    apellido: '',
+    meta: '',
+    fechanacimiento: '',
     email:'',
     password:''
   }
 
-  constructor() { }
+  constructor(private StorageService: StorageService) { }
 
-  ngOnInit() {
+  ngOnInit() {  
   }
+
   onSubmit(){
     console.log('submit');
     console.log(this.usuario);
-    // this.StorageService.crearUsuario(this.newUser).then(user => {
-    //   this.newUser = <User>{};
-    // });
+    this.StorageService.crearUsuario(this.newUser).then(user => {
+      this.newUser = <User>{};
+    });
   }
   
 }
