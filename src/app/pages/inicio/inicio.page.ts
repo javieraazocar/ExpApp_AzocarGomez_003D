@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 interface Componente{
   icon: string;
@@ -28,7 +30,7 @@ export class InicioPage implements OnInit {
   
    ]
 
-  constructor(private menuController: MenuController) { }
+  constructor(private menuController: MenuController, private router: Router) { }
 
   ngOnInit() {
   }
@@ -36,5 +38,8 @@ export class InicioPage implements OnInit {
     this.menuController.open('first');
   }
   
-  
+  logout(){
+    localStorage.setItem('authenticated', '0');
+    this.router.navigateByUrl('/');
+  }
 }

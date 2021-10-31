@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Componente{
   icon: string;
@@ -23,11 +24,15 @@ export class InfoPage implements OnInit {
       icon: 'clipboard-outline',
       name: 'Formulario',
       redirecTo: '../page3'
-    },
+    }
   ]
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  logout(){
+    localStorage.setItem('authenticated', '0');
+    this.router.navigateByUrl('/');
+  }
 }

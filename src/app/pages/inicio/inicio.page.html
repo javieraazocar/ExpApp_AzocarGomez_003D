@@ -4,6 +4,11 @@
     <ion-buttons slot="start">
       <ion-button (click)="mostrarMenu()" color="tertiary">
         <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="tertiary">
+        <ion-icon name="exit-outline"></ion-icon>
         
       </ion-button>
     </ion-buttons>
@@ -43,6 +48,7 @@
       </ion-card-content>
     </ion-card>
     <ion-card color="dark">
+      <img src="../../../assets/imgs/dieta.jpg">
       <ion-card-header >
         <ion-icon name="fitness" color="light" size="large"></ion-icon>
         <ion-card-title class="titulocard">Seguimiento de tu dieta</ion-card-title>
