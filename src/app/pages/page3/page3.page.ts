@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService, User } from 'src/app/services/storage.service';
+import { StorageService, Users } from 'src/app/services/storage.service';
 import {Platform} from '@ionic/angular';
 
 interface Componente{
@@ -16,7 +16,7 @@ interface Componente{
 export class Page3Page implements OnInit {
 
 
-  newUser: User = <User>{};
+  newUser: Users = <Users>{};
 
   componentes : Componente[] = [
     {
@@ -32,12 +32,14 @@ export class Page3Page implements OnInit {
     
   ]
   usuario = {
+    id: '',
     nombre: '',
     apellido: '',
-    meta: '',
-    fechanacimiento: '',
+    metapasos: 0,
     email:'',
-    password:''
+    password:'',
+    fechanacimiento: 0,
+    modified: ''
   }
 
   constructor(private StorageService: StorageService) { }
@@ -46,11 +48,15 @@ export class Page3Page implements OnInit {
   }
 
   onSubmit(){
-    console.log('submit');
-    console.log(this.usuario);
-    this.StorageService.crearUsuario(this.newUser).then(user => {
-      this.newUser = <User>{};
-    });
+    this.newUser.id = Date.now();
+    this.newUser.nombre = this.usuario.nombre;
+    this.newUser.apellido = this.usuario.apellido;
+    this.newUser.metapasos = this.usuario.metapasos;
+    this.newUser.email = this.usuario.email;
+    this.newUser.password = this.usuario.password;
+    this.newUser.fechanacimiento = this.usuario.fechanacimiento;
+    this.newUser.modified = Date.now();
+
   }
   
 }
