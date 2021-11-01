@@ -14,6 +14,7 @@ export interface Users {
 
 const USER_KEY = 'my-datos';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -43,5 +44,6 @@ export class StorageService {
 
   obtenerUsuarios(): Promise<Users[]> {
     return this.storage.get(USER_KEY);
+    
   }
 }

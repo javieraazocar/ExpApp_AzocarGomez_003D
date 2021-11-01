@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { StorageService, Users } from 'src/app/services/storage.service';
+
 
 @Component({
   selector: 'app-iniciosesion',
@@ -15,11 +17,12 @@ export class IniciosesionPage implements OnInit {
     password: ''
   }
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private storageService: StorageService) { }
 
   ngOnInit() {
     this.loginUrl = this.activatedRoute.snapshot.queryParamMap.get('returnto') || 'inicio';
     console.log(this.loginUrl);
+    console.log(this.storageService.obtenerUsuarios());
   }
 
   onSubmit() {
@@ -30,5 +33,6 @@ export class IniciosesionPage implements OnInit {
   signIn(){
     localStorage.setItem('authenticated','1');
     this.router.navigateByUrl(this.loginUrl);
+
   }
 }
