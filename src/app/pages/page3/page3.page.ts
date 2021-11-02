@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService, Users } from 'src/app/services/storage.service';
-import {Platform} from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 interface Componente{
@@ -45,7 +45,7 @@ export class Page3Page implements OnInit {
     modified: ''
   }
 
-  constructor(private StorageService: StorageService,  private router: Router) { }
+  constructor(private StorageService: StorageService,  private router: Router, private toastController: ToastController) { }
 
   ngOnInit() {  
   }
@@ -70,7 +70,16 @@ export class Page3Page implements OnInit {
     // se cambia el estado de authenticated a verdadero
     localStorage.setItem('authenticated','1');
     // se redirige a la página de inicio
-    this.router.navigateByUrl('/inicio');
+    this.router.navigate(['/inicio']);
+
+    // se muestra un mensaje de bienvenida
+    const toast = this.toastController.create({
+      position: 'top',
+      color: 'light',
+      duration: 4000,
+      message: '¡Bienvenido ' + this.newUser.nombre + '!',
+    });
+    toast.then(toast => toast.present());
 
   }
   
