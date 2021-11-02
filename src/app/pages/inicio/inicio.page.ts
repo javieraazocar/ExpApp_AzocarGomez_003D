@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import { StorageService, Users } from 'src/app/services/storage.service';
 
 interface Componente{
   icon: string;
@@ -29,11 +29,20 @@ export class InicioPage implements OnInit {
     },
 
    ]
+  
+  usuarios : Users[] = [];
 
-  constructor(private menuController: MenuController, private router: Router) { }
+  usuario = {
+    email: '',
+    password: '',
+  }
+
+  constructor(private menuController: MenuController, private router: Router, private storageService: StorageService) { }
 
   ngOnInit() {
+
   }
+  
   mostrarMenu(){
     this.menuController.open('first');
   }
