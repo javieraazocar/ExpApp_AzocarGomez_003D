@@ -23,11 +23,11 @@ export class InicioPage implements OnInit {
       redirecTo: '/info'
     },
     {
-      icon: 'clipboard-outline',
-      name: 'Formulario',
-      redirecTo: '/page3'
+      icon: 'planet-outline',
+      name: 'Listado de registros',
+      redirecTo: '/listado'
     },
-  
+
    ]
 
   constructor(private menuController: MenuController, private router: Router) { }

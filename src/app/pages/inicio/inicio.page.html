@@ -5,6 +5,7 @@
       <ion-button (click)="mostrarMenu()" color="tertiary">
         <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
       </ion-button>
+      
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="logout()" color="tertiary">
@@ -19,14 +20,6 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list>
-      <ion-item *ngFor="let c of componentes"
-                [routerLink]="c.redirecTo"
-                detail=true>
-        <ion-icon [name]="c.icon" slot="start" color="tertiary"></ion-icon>
-        {{c.name}}
-      </ion-item>
-    </ion-list>
     <ion-card color="primary">
       <img src="../../../assets/imgs/agua.jpg">
       <ion-card-header >
@@ -64,16 +57,16 @@
         </ion-item>
       </ion-card-content>
     </ion-card>
+    <!-- <ion-tabs style="position: fixed important;">
+      <ion-tab-bar translucent="true"  > 
+        <ion-tab-button *ngFor="let c of componentes"
+                        [routerLink]="c.redirecTo"
+                        detail=true>
+          <ion-icon [name] = "c.icon"></ion-icon>
+          <ion-label>{{ c.name }}</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs> -->
     
-    <ion-tab-bar slot="bottom">
-        
-      <ion-tab-button *ngFor="let c of componentes"
-                      [routerLink]="c.redirecTo"
-                      detail=true>
-        <ion-icon [name] = "c.icon"></ion-icon>
-        <ion-label>{{ c.name }}</ion-label>
-      </ion-tab-button>
-      
-    </ion-tab-bar>
 
 </ion-content>

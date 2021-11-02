@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" color="tertiary"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">Listado de registros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor = "let usuario of usuarios">
+
+      <ion-label>
+
+        <h2>ID:</h2> 
+        {{usuario.id}}
+        <h2>NOMBRE:</h2>
+        {{usuario.nombre}}
+        <h2>APELLIDO:</h2> 
+        {{usuario.apellido}}
+        <h2>META DE PASOS:</h2>
+        {{usuario.metapasos}}
+        <h2>EMAIL:</h2>
+        {{usuario.email}}
+        <h2>CONTRASEÑA:</h2>
+        {{usuario.password}}
+        <h2>FECHA DE NACIMIENTO:</h2>
+        {{usuario.fechanacimiento | date: 'short'}}
+        <h2>MODIFIED:</h2>
+        {{usuario.modified | date: 'short'}}
+
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

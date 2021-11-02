@@ -30,6 +30,12 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/iniciosesion/iniciosesion.module').then( m => m.IniciosesionPageModule)
   },
+  {
+    path: 'listado',
+    loadChildren: () => import('./pages/listado/listado.module').then( m => m.ListadoPageModule),
+    canLoad: [AuthGuard]
+  },
+
 
 
 ];
