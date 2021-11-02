@@ -35,12 +35,17 @@ export class IniciosesionPage implements OnInit {
     this.storageService.obtenerUsuarios().then(
       (usuarios) => {
         this.usuarios = usuarios;
-        // validate email and password
+        // se busca email y password
         let valida = this.usuarios.find(usuario => usuario.email === this.usuario.email && usuario.password === this.usuario.password);
         
+
+        // if para verificar si la variable valida encontró usuario y contraseña
         if(valida){
+          //se cambia el estado de la autenticación a verdadera
           localStorage.setItem('authenticated','1');
+          //se redirecciona a la página inicio
           this.router.navigate(['/inicio']);
+          //se crea el mensajito de bienvenida
           const toast = this.toastController.create({
             position: 'top',
             color: 'light',
@@ -50,7 +55,14 @@ export class IniciosesionPage implements OnInit {
           toast.then(toast => toast.present());
         }
         else{
-          console.log('Ha ingresado un dato incorrecto, inténtelo nuevamente.');
+          const toast = this.toastController.create({
+            color: 'light',
+            duration: 4000,
+            message: 'Ha ingresado un dato incorrecto, inténtelo nuevamente.',
+          });
+          toast.then(toast => toast.present());
+          console.log('Login incorrecto.');
+        
         }
       }
     );
