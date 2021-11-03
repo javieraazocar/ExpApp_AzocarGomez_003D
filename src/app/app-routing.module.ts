@@ -34,9 +34,11 @@ const routes: Routes = [
     path: 'listado',
     loadChildren: () => import('./pages/listado/listado.module').then( m => m.ListadoPageModule),
     canLoad: [AuthGuard]
-  },  {
+  },
+  {
     path: 'salud',
-    loadChildren: () => import('./pages/salud/salud.module').then( m => m.SaludPageModule)
+    loadChildren: () => import('./pages/salud/salud.module').then( m => m.SaludPageModule),
+    canLoad: [AuthGuard]
   },
 
 
