@@ -26,6 +26,11 @@ export class AppComponent {
       name: 'Listado de registros',
       redirecTo:'/listado'
     },
+    {
+      icon: 'barbell-outline',
+      name: 'Ejercicios',
+      redirecTo:'/salud'
+    },
   ];
  
 }

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="inicio" color="tertiary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ejercicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-grid fixed>
+    <ion-text >
+      <h3 class="desc">En esta sección encontrarás algunos ejemplos de ejercicios que puedes hacer.</h3>
+    </ion-text>
+    
+    <ion-row>
+      <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+        *ngFor ="let ejercicio of ejercicio; let i= index">
+      <ion-card class="tarjeta" color="tertiary">
+        <ion-card-header>
+          <ion-card-title>
+            <span>{{ i + 1 }}</span>
+          </ion-card-title>
+        </ion-card-header>
+           <ion-img *ngIf="ejercicio.image"
+                    [src]="ejercicio.image"></ion-img>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
