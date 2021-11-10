@@ -66,44 +66,66 @@ export class Page3Page implements OnInit {
     this.storageService.obtenerUsuarios().then(
       (usuarios) => {
         this.usuarios = usuarios;
-      // se busca email para evitar repetir correo electrónico
-      let valida = this.usuarios.find(usuario => usuario.email === this.usuario.email);
-    
-      if(valida){
-        //mensaje de error en caso de correo electrónico ya existente
-        const toast = this.toastController.create({
-          position: 'top',
-          color: 'light',
-          duration: 4000,
-          message: 'El correo electrónico que ha ingresado, ya está registrado. Inténtelo nuevamente.',
-        });
-        toast.then(toast => toast.present());
-      }
-      else{
-        // se suben los datos a la base de datos
-        this.storageService.crearUsuario(this.newUser);
+        
+        // si la base de datos no está vacía
+        if(usuarios != null){
+          console.log('La base de datos no está vacía, se prosigue con la validación.');
+          // se busca email para evitar repetir correo electrónico
+          let valida = this.usuarios.find(usuario => usuario.email === this.usuario.email);
+          if(valida) {
+            //mensaje de error en caso de correo electrónico ya existente
+            const toast = this.toastController.create({
+              position: 'top',
+              color: 'light',
+              duration: 4000,
+              message: 'El correo electrónico que ha ingresado, ya está registrado. Inténtelo nuevamente.',
+            });
+            toast.then(toast => toast.present());
+          }
+          else{
+            // se suben los datos a la base de datos
+            this.storageService.crearUsuario(this.newUser);
 
-        console.log(this.newUser);
+            console.log(this.newUser);
 
 
-        // se cambia el estado de authenticated a verdadero
-        localStorage.setItem('authenticated','1');
-        // se redirige a la página de inicio
-        this.router.navigate(['/inicio']);
+            // se cambia el estado de authenticated a verdadero
+            localStorage.setItem('authenticated','1');
+            // se redirige a la página de inicio
+            this.router.navigate(['/inicio']);
 
-        // se muestra un mensaje de bienvenida
-        const toast = this.toastController.create({
-          position: 'top',
-          color: 'light',
-          duration: 4000,
-          message: '¡Bienvenido ' + this.newUser.nombre + '!',
-        });
-        toast.then(toast => toast.present());
-      }
+            // se muestra un mensaje de bienvenida
+            const toast = this.toastController.create({
+              position: 'top',
+              color: 'light',
+              duration: 4000,
+              message: '¡Bienvenido ' + this.newUser.nombre + '!',
+            });
+            toast.then(toast => toast.present());
+          }
+        }else{
+          console.log('Se crea el usuario sin validación de email al estar vacía la BD.');
+          // se suben los datos a la base de datos
+          this.storageService.crearUsuario(this.newUser);
 
-    
+          console.log(this.newUser);
 
-  }
+
+          // se cambia el estado de authenticated a verdadero
+          localStorage.setItem('authenticated','1');
+          // se redirige a la página de inicio
+          this.router.navigate(['/inicio']);
+
+          // se muestra un mensaje de bienvenida
+          const toast = this.toastController.create({
+            position: 'top',
+            color: 'light',
+            duration: 4000,
+            message: '¡Bienvenido ' + this.newUser.nombre + '!',
+          });
+          toast.then(toast => toast.present());
+        }
+    }
   
   );
 }
